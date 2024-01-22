@@ -47,13 +47,10 @@ credentials = auth_process()
 # Here starts the Data retrieval part
 youtube = build('youtube', 'v3', credentials=credentials)
 
-# next_page_token = None
-
 request = youtube.playlistItems().list(
     part="contentDetails",
     playlistId="PLpkXaq_xdxJshkb9ym9gYmviQYj6TIpfx",
-    maxResults='1000',
-    prettyPrint="true"
+    maxResults='1000'
 )
 response = request.execute()
 
